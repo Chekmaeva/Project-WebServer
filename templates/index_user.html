@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+ 
+{% block content %}
+    <h1>Hello, {{ username }}!</h1>
+
+{% if "username" in session %}
+    <div class="btn-group btn-group-lg" role="group" aria-label="Action">
+        <a href="{{ url_for('search_price') }}"><button type="button" class="btn btn-info">Filter by price</button></a>
+        <a href="{{ url_for('search_dealer') }}"><button type="button" class="btn btn-info">Filter by Dealership</button></a>
+    </div>
+    {% for item in motorcycles %}
+        <div class="alert alert-dark" role="alert">
+            <h2><a href="/motorcycle/{{ item[2] }}">{{item[0]}}</a></h2>
+            <div>{{item[1]}}</div>
+        </div>
+    {% endfor %}
+{% endif %}
+
+{% endblock %}

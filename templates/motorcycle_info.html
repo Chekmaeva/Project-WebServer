@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <div class="jumbotron">
+          <h1 class="display-4">{{ motorcycle[1] }}</h1>
+          <p class="lead">Price: {{ motorcycle[2] }}</p>
+          <hr class="my-4">
+          <p>Power: {{ motorcycle[3] }}</p>
+          <p>Color: {{ motorcycle[4] }}</p>
+            <p>Dealership: {{ dealer }}</p>
+        </div>
+        <a href="/index"> <button type="button" class="btn btn-outline-info">Back</button></a>
+{% endblock %}
